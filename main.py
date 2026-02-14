@@ -18,7 +18,7 @@ embed = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 store = LocalFileStore("./cache_embed/")
 
-pdf_load = PyPDFLoader("documento/regras_futebol.pdf")
+pdf_load = PyPDFLoader("documentos/regras_futebol.pdf")
 arquivo = pdf_load.load()
 
 recorte = RecursiveCharacterTextSplitter(
