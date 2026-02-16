@@ -23,7 +23,8 @@ arquivo = pdf_load.load()
 
 recorte = RecursiveCharacterTextSplitter(
     chunk_size=1000,
-    chunk_overlap=100
+    chunk_overlap=100,
+    separators=[".", "\n"]
 
 ).split_documents(arquivo)
 
@@ -82,4 +83,5 @@ print(f"IA:\n{response["result"]}")
 
 print("-"*80)
 for i, doc in enumerate(response["source_documents"]):
+    print(f"Trecho: {i+1}\nPage: {doc.metadata.get("page")}")
     print(f"Trecho: {i+1}\nPage: {doc.metadata.get("page")}")
